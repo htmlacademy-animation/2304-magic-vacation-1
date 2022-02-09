@@ -205,7 +205,7 @@
     margin: 0;
 
     opacity: 0;
-    transform: translateX(2rem);
+    transform: translate3d(2rem, 0, 0);
 
     animation-name: fadeInRight;
     animation-duration: 0.5s;
