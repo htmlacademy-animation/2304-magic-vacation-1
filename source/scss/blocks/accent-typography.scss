@@ -1,0 +1,43 @@
+.accent-typography {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.accent-typography__string {
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
+  padding-top: 2.3rem;
+  padding-right: 0.4rem;
+
+  @media (max-width: $tablet) and (orientation: portrait) {
+    padding-top: 0.6rem;
+    padding-right: 0.1rem;
+  }
+
+  @media (max-width: $tablet) and (orientation: landscape) {
+    padding-top: 2rem;
+    padding-right: 0.1rem;
+  }
+
+  @media (max-width: $mobile) and (orientation: landscape) {
+    padding-top: 0.9rem;
+    padding-right: 0.1rem;
+  }
+}
+
+.accent-typography__character {
+  display: inline-block;
+
+  &--space {
+    width: 1rem;
+  }
+
+  &:not(&--space) {
+    transform: translate3d(0, 1.1em, 0);
+
+    animation-name: slideInUp;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+  }
+}

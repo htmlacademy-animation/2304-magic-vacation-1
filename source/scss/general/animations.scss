@@ -23,12 +23,22 @@
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateX(2rem);
+    transform: translate3d(2rem, 0, 0);
   }
 
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 1.1em, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -40,6 +50,189 @@
 
   to {
     left: 50%;
+    width: 100%;
+  }
+}
+
+
+@keyframes fadeInLeafBlue1 {
+  0% {
+    opacity: 0;
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  10% {
+    transform: rotate3d(0, 0, 1, -15deg);
+  }
+
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  50% {
+    transform: rotate3d(0, 0, 1, 10deg);
+  }
+
+  70% {
+
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  80% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes fadeInLeafBlue2 {
+  0% {
+    opacity: 0;
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  10% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  20% {
+    transform: rotate3d(0, 0, 1, -15deg);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    transform: rotate3d(0, 0, 1, 10deg);
+  }
+
+  50% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  70% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+
+@keyframes fadeInLeafGreen {
+  0% {
+    opacity: 0;
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  10% {
+    transform: rotate3d(0, 0, 1, -15deg);
+  }
+
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  50% {
+    transform: rotate3d(0, 0, 1, 10deg);
+  }
+
+  70% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  80% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+
+@keyframes slideInUpSuitcase {
+  0% {
+    transform:
+      translate3d(0, 30rem, 0)
+      scale3d(0, 0, 1);
+  }
+
+  85% {
+    transform:
+      translate3d(0, -3rem, 0)
+      scale3d(1.1, 1.1, 1);
+  }
+
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale3d(1, 1, 1);
+  }
+}
+
+@keyframes fadeInUpFlamingo {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 30rem, 0);
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes moveFlamingo {
+  0% {
+    transform: 
+      translate3d(0, 0, 0)
+      rotate3d(0, 0, 1, 0deg);
+  }
+
+  100% {
+    transform: 
+      translate3d(0, 2rem, 0)
+      rotate3d(0, 0, 1, -3deg);
+  }
+}
+
+@keyframes showResultFormField {
+  0% {
+    opacity: 0;
+    width: 0%;
+  }
+
+  100% {
+    opacity: 1;
     width: 100%;
   }
 }
