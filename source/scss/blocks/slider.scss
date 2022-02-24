@@ -97,18 +97,23 @@
   font-size: 1.8rem;
   line-height: 2rem;
   opacity: 0;
-  transform: translateX(2rem);
 
   .screen--story.active .swiper-slide-active & {
-    opacity: 1;
-    transform: translateX(0);
-    transition: all 0.6s ease-in 0.1s;
+    animation-name: fadeInRight;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
   }
 
   .screen--story.active .swiper-slide-next & {
-    opacity: 1;
-    transform: translateX(0);
-    transition: all 0.6s ease-in 0.4s;
+    animation-name: fadeInRight;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
   }
 
   @media (min-width: $stop-scaling) {
@@ -128,8 +133,7 @@
     line-height: 1.5rem;
 
     .screen--story.active .swiper-slide-next & {
-      opacity: 0;
-      transform: translateX(2rem);
+      animation-name: none;
     }
   }
 
@@ -143,8 +147,7 @@
     line-height: 1.5rem;
 
     .screen--story.active .swiper-slide-next & {
-      opacity: 0;
-      transform: translateX(2rem);
+      animation-name: none;
     }
   }
 }
@@ -179,6 +182,24 @@
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+
+  &--prev {
+    animation-name: fadeIn, rollOutToRight;
+    animation-duration: 0.5s, 0.6s;
+    animation-timing-function: ease-in, ease-out;
+    animation-direction: normal;
+    animation-fill-mode: backwards;
+    animation-delay: 0.65s, 0.6s;
+  }
+
+  &--next {
+    animation-name: fadeIn, rollOutToLeft;
+    animation-duration: 0.5s, 0.6s;
+    animation-timing-function: ease-in, ease-out;
+    animation-direction: normal;
+    animation-fill-mode: backwards;
+    animation-delay: 0.65s, 0.6s;
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -239,8 +260,76 @@
     }
   }
 
+  .purple-theme &,
+  .purple-theme &:hover {
+    color: $c-dark;
+  }
+
+  .purple-theme &:focus {
+    color: $c-dark;
+
+    &::before {
+      border-color: $c-dark;
+    }
+  }
+
+  .purple-theme &:active,
+  .purple-theme &:active:focus {
+    color: $c-light;
+
+    &::before {
+      background-color: $c-dark;
+      border-color: $c-dark;
+    }
+  }
+
+  .blue-theme &,
+  .blue-theme &:hover {
+    color: $c-lightblue;
+  }
+
+  .blue-theme &:focus {
+    color: $c-lightblue;
+
+    &::before {
+      border-color: $c-lightblue;
+    }
+  }
+
+  .blue-theme &:active,
+  .blue-theme &:active:focus {
+    color: $c-light;
+
+    &::before {
+      background-color: $c-lightblue;
+      border-color: $c-lightblue;
+    }
+  }
+
+  .lightblue-theme &,
+  .lightblue-theme &:hover {
+    color: $c-blue;
+  }
+
+  .lightblue-theme &:focus {
+    color: $c-blue;
+
+    &::before {
+      border-color: $c-blue;
+    }
+  }
+
+  .lightblue-theme &:active,
+  .lightblue-theme &:active:focus {
+    color: $c-light;
+
+    &::before {
+      background-color: $c-blue;
+      border-color: $c-blue;
+    }
+  }
+
   &.swiper-button-disabled {
-    opacity: 0.5;
     pointer-events: none;
   }
 }
@@ -257,6 +346,13 @@
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 4rem;
+
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-direction: normal;
+  animation-fill-mode: backwards;
+  animation-delay: 0.65s;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;

@@ -73,10 +73,45 @@ export default class FullPageScroll {
       screen.classList.add(`screen--hidden`);
       screen.classList.remove(`active`);
     });
+
+    this.prepareFootnote();
+
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);
     }, 100);
+  }
+
+  prepareFootnote() {
+    const activeScreenFootnote = this.screenElements[this.activeScreen].querySelector(`.footnote`);
+    const prevActiveScreenFootnote = this.screenElements[this.prevActiveScreen].querySelector(`.footnote`);
+
+    if (!activeScreenFootnote && !prevActiveScreenFootnote) {
+      return false;
+    }
+
+    if (!activeScreenFootnote) {
+      prevActiveScreenFootnote.classList.remove(`footnote--show`);
+      return false;
+    }
+
+    if (prevActiveScreenFootnote && prevActiveScreenFootnote.classList.contains(`footnote--show`)) {
+      activeScreenFootnote.classList.add(`footnote--show`);
+      activeScreenFootnote.classList.add(`footnote--fade-in`);
+
+      setTimeout(() => {
+        activeScreenFootnote.classList.remove(`footnote--fade-in`);
+      }, 1000);
+
+    } else {
+      activeScreenFootnote.classList.add(`footnote--slide-in-up`);
+
+      setTimeout(() => {
+        activeScreenFootnote.classList.add(`footnote--show`);
+        activeScreenFootnote.classList.remove(`footnote--slide-in-up`);
+      }, 1000);
+
+    }
   }
 
   changeActiveMenuItem() {

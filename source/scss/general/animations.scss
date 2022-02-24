@@ -236,3 +236,41 @@
     width: 100%;
   }
 }
+
+@keyframes rollOutToRight {
+  0% {
+    transform:
+      translate3d(-2rem, 0 , 0)
+      rotate3d(0, 0, 1, -180deg);
+  }
+
+  100% {
+    transform:
+      translate3d(0, 0 , 0)
+      rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes rollOutToLeft {
+  0% {
+    transform:
+      translate3d(2rem, 0 , 0)
+      rotate3d(0, 0, 1, 180deg);
+  }
+
+  100% {
+    transform:
+      translate3d(0, 0 , 0)
+      rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes slideInUpFootnote {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
