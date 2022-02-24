@@ -89,6 +89,87 @@
       border-color: $c-purple;
     }
   }
+
+  .purple-theme & {
+    color: $c-purple;
+
+    &:hover,
+    .social-block--active & {
+      color: $c-dark;
+    }
+
+    &:focus {
+      color: $c-dark;
+
+      &::before {
+        border-color: $c-dark;
+      }
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-light;
+
+      &::before {
+        background-color: $c-dark;
+        border-color: $c-dark;
+      }
+    }
+  }
+
+  .blue-theme & {
+    color: $c-blue;
+
+    &:hover,
+    .social-block--active & {
+      color: $c-lightblue;
+    }
+
+    &:focus {
+      color: $c-lightblue;
+
+      &::before {
+        border-color: $c-lightblue;
+      }
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-light;
+
+      &::before {
+        background-color: $c-lightblue;
+        border-color: $c-lightblue;
+      }
+    }
+  }
+
+  .lightblue-theme & {
+    color: $c-lightblue;
+
+    &:hover,
+    .social-block--active & {
+      color: $c-blue;
+    }
+
+    &:focus {
+      color: $c-blue;
+
+      &::before {
+        border-color: $c-blue;
+      }
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-light;
+
+      &::before {
+        background-color: $c-blue;
+        border-color: $c-blue;
+      }
+    }
+  }
 }
 
 .social-block__list {
@@ -213,6 +294,54 @@
     color: $c-purple;
     background-color: $c-light;
     border-color: $c-light;
+  }
+
+  .purple-theme:not(.menu-opened) & {
+    &:hover {
+      color: $c-dark;
+    }
+
+    &:focus {
+      color: $c-dark;
+      border-color: $c-dark;
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-dark;
+    }
+  }
+
+  .blue-theme:not(.menu-opened) & {
+    &:hover {
+      color: $c-lightblue;
+    }
+
+    &:focus {
+      color: $c-lightblue;
+      border-color: $c-lightblue;
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-lightblue;
+    }
+  }
+
+  .lightblue-theme:not(.menu-opened) & {
+    &:hover {
+      color: $c-blue;
+    }
+
+    &:focus {
+      color: $c-blue;
+      border-color: $c-blue;
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-blue;
+    }
   }
 
   svg {

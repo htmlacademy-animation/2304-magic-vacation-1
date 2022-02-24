@@ -1,9 +1,47 @@
 import Swiper from "swiper";
 
 export default () => {
+  let pageTheme;
   let storySlider;
   let sliderContainer = document.getElementById(`story`);
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
+
+  const resetPageTheme = function() {
+    if (pageTheme) {
+      document.body.classList.remove(pageTheme);
+    }
+  };
+
+  const updatePageTheme = function() {
+    resetPageTheme();
+
+    switch(storySlider.activeIndex) {
+      case 0:
+      case 1:
+        pageTheme = 'purple-theme';
+        break;
+
+      case 2:
+      case 3:
+        pageTheme = 'blue-theme';
+        break;
+
+      case 4:
+      case 5:
+        pageTheme = 'lightblue-theme';
+        break;
+
+      case 6:
+      case 7:
+      default:
+        pageTheme = '';
+        break;
+    }
+
+    if (pageTheme) {
+      document.body.classList.add(pageTheme);
+    }
+  };
 
   const setSlider = function () {
     if (((window.innerWidth / window.innerHeight) < 1) || window.innerWidth < 769) {
@@ -26,6 +64,8 @@ export default () => {
             } else if (storySlider.activeIndex === 6 || storySlider.activeIndex === 7) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg"), linear-gradient(180deg, rgba(45, 39, 63, 0) 0%, #2F2A42 16.85%)`;
             }
+
+            updatePageTheme();
           },
           resize: () => {
             storySlider.update();
@@ -60,6 +100,8 @@ export default () => {
             } else if (storySlider.activeIndex === 6) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg")`;
             }
+
+            updatePageTheme();
           },
           resize: () => {
             storySlider.update();
@@ -76,6 +118,16 @@ export default () => {
       storySlider.destroy();
     }
     setSlider();
+  });
+
+  document.body.addEventListener(`screenChanged`, function(event) {
+    const screenName = event.detail.screenName;
+
+    if (screenName === 'story') {
+      updatePageTheme();
+    } else {
+      resetPageTheme();
+    }
   });
 
   setSlider();

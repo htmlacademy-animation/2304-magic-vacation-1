@@ -303,6 +303,33 @@
         transform-origin: 0% 50%;
       }
     }
+
+    .purple-theme:not(.menu-opened) &:hover,
+    .purple-theme:not(.menu-opened) &:focus {
+      color: $c-dark;
+
+      &::after {
+        background-color: $c-dark;
+      }
+    }
+
+    .blue-theme:not(.menu-opened) &:hover,
+    .blue-theme:not(.menu-opened) &:focus {
+      color: $c-lightblue;
+
+      &::after {
+        background-color: $c-lightblue;
+      }
+    }
+
+    .lightblue-theme:not(.menu-opened) &:hover,
+    .lightblue-theme:not(.menu-opened) &:focus {
+      color: $c-blue;
+
+      &::after {
+        background-color: $c-blue;
+      }
+    }
   }
 }
 

@@ -305,12 +305,26 @@
     font-size: 1.6rem;
   }
 
-  span {
+  .result__button-text {
+    animation-name: fadeIn;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in;
+    animation-direction: normal;
+    animation-fill-mode: backwards;
+  }
+
+  .result__button-icon {
     position: relative;
     margin-left: 1.5rem;
     width: 4rem;
     height: 4rem;
     color: $c-dark;
+
+    animation-name: fadeIn, rollOutToLeft;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in, ease-out;
+    animation-direction: normal;
+    animation-fill-mode: backwards;
 
     @media (min-width: $stop-scaling) {
       margin-left: 15px;
@@ -344,7 +358,7 @@
   }
 
   &:hover {
-    span::before {
+    .result__button-icon::before {
       width: 112.5%;
       height: 112.5%;
     }
@@ -353,18 +367,18 @@
   &:focus {
     outline: none;
 
-    span::before {
+    .result__button-icon::before {
       border-color: $c-purple;
     }
   }
 
   &:active,
   &:active:focus {
-    span {
+    .result__button-icon {
       color: $c-light;
     }
 
-    span::before {
+    .result__button-icon::before {
       width: 100%;
       height: 100%;
       background-color: $c-purple;

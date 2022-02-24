@@ -1,5 +1,5 @@
 export default () => {
-   window.addEventListener(`load`, () => {
+  window.addEventListener(`load`, () => {
     document.body.classList.add(`page--loaded`);
   });
 };
