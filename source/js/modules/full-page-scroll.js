@@ -74,12 +74,32 @@ export default class FullPageScroll {
       screen.classList.remove(`active`);
     });
 
+    this.prepareSmilAnimation();
     this.prepareFootnote();
 
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);
     }, 100);
+  }
+
+  prepareSmilAnimation() {
+    if (this.screenElements[this.activeScreen].id === 'prizes') {
+
+      const prize1 = this.screenElements[this.activeScreen].querySelector(`#prize1`);
+
+      if (prize1) {
+        prize1.querySelectorAll(`animate, animateTransform`)
+          .forEach((node) => {
+            node.parentNode.replaceChild(
+              node.cloneNode(),
+              node
+            );
+          });
+
+        prize1.querySelector(`#prize1Animation`).beginElement();
+      }
+    }
   }
 
   prepareFootnote() {
