@@ -86,10 +86,10 @@ export default class FullPageScroll {
   prepareSmilAnimation() {
     if (this.screenElements[this.activeScreen].id === 'prizes') {
 
-      const prize1 = this.screenElements[this.activeScreen].querySelector(`#prize1`);
+      const prizes = this.screenElements[this.activeScreen].querySelectorAll(`#prize1, #prize2`);
 
-      if (prize1) {
-        prize1.querySelectorAll(`animate, animateTransform`)
+      prizes.forEach((prize) => {
+        prize.querySelectorAll(`animate, animateTransform, animateMotion`)
           .forEach((node) => {
             node.parentNode.replaceChild(
               node.cloneNode(),
@@ -97,8 +97,22 @@ export default class FullPageScroll {
             );
           });
 
-        prize1.querySelector(`#prize1Animation`).beginElement();
-      }
+        const prizeAnimation = prize.querySelector(`#${prize.id}Animation`);
+
+        if ( prizeAnimation ) {
+          let offset;
+
+          switch(prize.id) {
+            case 'prize1':
+              offset = 0;
+              break;
+            case 'prize2':
+              offset = 2.5;
+          }
+
+          prizeAnimation.beginElementAt(offset);
+        }
+      });
     }
   }
 
