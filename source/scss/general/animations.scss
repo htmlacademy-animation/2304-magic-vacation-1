@@ -32,6 +32,18 @@
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 2rem, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 @keyframes slideInUp {
   from {
     transform: translate3d(0, 1.1em, 0);
@@ -271,6 +283,50 @@
   }
 
   100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes showPrize1 {
+  0% {
+    opacity: 0;
+    transform: translate3d(17rem, 0, 0);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translate3d(17rem, 0, 0);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translate3d(17rem, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes showPrize2 {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showPrize3 {
+  0% {
+    opacity: 0;
+    transform: translate3d(1.5rem, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
