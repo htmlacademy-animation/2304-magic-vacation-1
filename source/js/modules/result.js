@@ -1,3 +1,5 @@
+import SmilAnimation from './smil-animation';
+
 export default () => {
   let showResultEls = document.querySelectorAll(`.js-show-result`);
   let results = document.querySelectorAll(`.screen--result`);
@@ -14,6 +16,29 @@ export default () => {
         });
         targetEl[0].classList.add(`screen--show`);
         targetEl[0].classList.remove(`screen--hidden`);
+
+        switch(target) {
+          case `result`:
+            SmilAnimation.create({
+              rootNode: targetEl[0].querySelector('#resultTitle1'),
+              animationStartSelector: '#resultTitle1Animation',
+            }).start();
+            break;
+
+          case `result2`:
+            SmilAnimation.create({
+              rootNode: targetEl[0].querySelector('#resultTitle2'),
+              animationStartSelector: '#resultTitle2Animation',
+            }).start();
+            break;
+
+          case `result3`:
+            SmilAnimation.create({
+              rootNode: targetEl[0].querySelector('#resultTitle3'),
+              animationStartSelector: '#resultTitle3Animation',
+            }).start();
+            break;
+        }
       });
     }
 

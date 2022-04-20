@@ -1,4 +1,5 @@
 import throttle from 'lodash/throttle';
+import SmilAnimation from './smil-animation';
 
 export default class FullPageScroll {
   constructor() {
@@ -89,32 +90,23 @@ export default class FullPageScroll {
       const prizes = this.screenElements[this.activeScreen].querySelectorAll(`#prize1, #prize2, #prize3`);
 
       prizes.forEach((prize) => {
-        prize.querySelectorAll(`animate, animateTransform, animateMotion`)
-          .forEach((node) => {
-            node.parentNode.replaceChild(
-              node.cloneNode(),
-              node
-            );
-          });
+        const prizeSmilAnimation = SmilAnimation.create({
+          rootNode: prize,
+          animationStartSelector: `#${prize.id}Animation`,
+        });
 
-        const prizeAnimation = prize.querySelector(`#${prize.id}Animation`);
+        switch(prize.id) {
+          case `prize1`:
+            prizeSmilAnimation.start(0);
+            break;
 
-        if ( prizeAnimation ) {
-          let offset = 0;
+          case `prize2`:
+            prizeSmilAnimation.start(2.5);
+            break;
 
-          switch(prize.id) {
-            case 'prize1':
-              offset = 0;
-              break;
-            case 'prize2':
-              offset = 2.5;
-              break;
-            case 'prize3':
-              offset = 5;
-              break;
-          }
-
-          prizeAnimation.beginElementAt(offset);
+          case `prize3`:
+            prizeSmilAnimation.start(5);
+            break;
         }
       });
     }
