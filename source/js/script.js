@@ -10,6 +10,7 @@ import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 import page from './modules/page';
 import initAccentTypography from './modules/init-accent-typography';
+import initGameTimer from './modules/init-game-timer';
 
 // init modules
 page();
@@ -22,6 +23,7 @@ result();
 form();
 social();
 initAccentTypography();
+initGameTimer();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
