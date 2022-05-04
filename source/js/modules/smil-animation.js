@@ -22,7 +22,7 @@ export default class SmilAnimation {
         });
   }
 
-  start(offset = 0) {
+  start() {
     if (!this._rootNode || !this._animationStartSelector) {
       return;
     }
@@ -32,7 +32,7 @@ export default class SmilAnimation {
     const animationStart = this._rootNode.querySelector(this._animationStartSelector);
 
     if (animationStart) {
-      animationStart.beginElementAt(offset);
+      animationStart.beginElement();
     }
   }
 

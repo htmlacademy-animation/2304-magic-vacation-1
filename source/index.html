@@ -191,10 +191,10 @@
             <p>Найди ответ и&nbsp;получи один из&nbsp;призов:</p>
           </div>
           <ul class="prizes__list">
-            <li class="prizes__item prizes__item--journeys">
+            <li id="prize1" class="prizes__item prizes__item--journeys">
               <div class="prizes__icon">
                 <img src="img/prize1-mob.svg" alt="">
-                <svg id="prize1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 350 330">
+                <svg id="prize1Icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 350 330">
                   <g id="prize1Clouds">
                     <g opacity="0">
                       <path d="M41.77,97.54H77.06a12.4,12.4,0,1,1,24.8,0h17.93" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
@@ -242,7 +242,7 @@
                         from="200, 0"
                         to="-200, 0"
                         dur="2.6s"
-                        begin="prize1Animation.begin"
+                        begin="prize1SmilAnimation.begin"
                         fill="freeze"
                         />
                   </g>
@@ -255,7 +255,7 @@
                             attributeName="opacity"
                             values="1; 0"
                             dur="0.05s"
-                            begin="prize1Animation.begin + 1.5s"
+                            begin="prize1SmilAnimation.begin + 1.5s"
                             fill="freeze"
                             />
                       </path>
@@ -266,7 +266,7 @@
                           values="0 0; -8 23; 0 0"
                           keyTimes="0; 0.5; 1"
                           dur="1.4s"
-                          begin="prize1Animation.begin"
+                          begin="prize1SmilAnimation.begin"
                           repeatCount="indefinite"
                           />
                       <animateTransform
@@ -275,7 +275,7 @@
                           values="1 1; 1 0.9; 1 1"
                           keyTimes="0; 0.5; 1"
                           dur="1.4s"
-                          begin="prize1Animation.begin"
+                          begin="prize1SmilAnimation.begin"
                           additive="sum"
                           repeatCount="indefinite"
                           />
@@ -285,7 +285,7 @@
                           values="0; 2; 0"
                           keyTimes="0; 0.5; 1"
                           dur="1.4s"
-                          begin="prize1Animation.begin"
+                          begin="prize1SmilAnimation.begin"
                           additive="sum"
                           repeatCount="indefinite"
                           />
@@ -301,7 +301,7 @@
                           values="0 2.4; 0 -2.4; 0 2.4"
                           keyTimes="0; 0.5; 1"
                           dur="1.4s"
-                          begin="prize1Animation.begin"
+                          begin="prize1SmilAnimation.begin"
                           repeatCount="indefinite"
                           />
                     </g>
@@ -319,7 +319,7 @@
                               m 132.18,186.12 c 16.74,-4.27 44.58,-13 72.81,-13 44.53,0 73.26,9.43 73.61,17.38 v 0.51 c -0.85,7.86 -29.45,11.17 -73.6,11.17 -28.23,0 -56.07,-2.76 -72.81,-7 -3.79,-1 -5.79,-2.53 -6,-4.13 v -0.51 c 0.13,-1.69 2.15,-3.36 6.1,-4.37
                             "
                             dur="1.4s"
-                            begin="prize1Animation.begin"
+                            begin="prize1SmilAnimation.begin"
                             repeatCount="indefinite"
                             />
                       </path>
@@ -335,7 +335,7 @@
                           values="0 -2.4; 0 2.4; 0 -2.4"
                           keyTimes="0; 0.5; 1"
                           dur="1.4s"
-                          begin="prize1Animation.begin"
+                          begin="prize1SmilAnimation.begin"
                           repeatCount="indefinite"
                           />
                     </g>
@@ -346,7 +346,7 @@
                             from="84.0"
                             to="88.0"
                             dur="0.2s"
-                            begin="prize1Animation.begin - 0.1s"
+                            begin="prize1SmilAnimation.begin - 0.1s"
                             repeatCount="indefinite"
                             />
                       </line>
@@ -356,7 +356,7 @@
                             from="84.0"
                             to="88.0"
                             dur="0.2s"
-                            begin="prize1Animation.begin - 0.2s"
+                            begin="prize1SmilAnimation.begin - 0.2s"
                             repeatCount="indefinite"
                             />
                       </line>
@@ -366,7 +366,7 @@
                             from="68.0"
                             to="72.0"
                             dur="0.2s"
-                            begin="prize1Animation.begin - 0.3s"
+                            begin="prize1SmilAnimation.begin - 0.3s"
                             repeatCount="indefinite"
                             />
                       </line>
@@ -375,7 +375,7 @@
                         attributeName="opacity"
                         values="1; 0"
                         dur="0.4s"
-                        begin="prize1Animation.begin + 1.7s"
+                        begin="prize1SmilAnimation.begin + 1.7s"
                         fill="freeze"
                         />
                   </g>
@@ -389,7 +389,7 @@
                             M 289.94 329 L 244.88 329 L 212.8 329 C 211.987 329 211.173 329 210.36 329 L 200.16 329 C 199.41 329 198.66 329 197.91 329 L 178.91 329 C 177.877 329 176.843 329 175.81 329 L 149.39 329 C 148.64 329 147.89 329 147.14 329 L 144.51 329 C 143.74 329 142.97 329 142.2 329 L 124.63 329 L 80.78 329
                           "
                           dur="0.5s"
-                          begin="prize1Animation.begin + 1.5s"
+                          begin="prize1SmilAnimation.begin + 1.5s"
                           fill="freeze"
                           />
                     </path>
@@ -445,14 +445,14 @@
                             M 275 152.42 L 257.87 152.42 C 247.768 152.603 240.35 160.644 240.35 170 L 240.35 207.85 C 240.35 218.296 248.973 225.362 257.87 225.43 L 275 225.43 C 284.757 225.362 292.51 217.587 292.51 207.83 L 292.51 170 C 292.381 160.265 284.854 152.333 275 152.42 Z
                           "
                           dur="0.5s"
-                          begin="prize1Animation.begin + 1.5s"
+                          begin="prize1SmilAnimation.begin + 1.5s"
                           />
                     </path>
                     <animate
                         attributeName="opacity"
                         values="0; 1"
                         dur="0.05s"
-                        begin="prize1Animation.begin + 1.5s"
+                        begin="prize1SmilAnimation.begin + 1.5s"
                         fill="freeze"
                         />
                   </g>
@@ -557,9 +557,9 @@
                         />
                   </g>
                   <animate
-                      id="prize1Animation"
+                      id="prize1SmilAnimation"
                       attributeName="opacity"
-                      values="0; 1"
+                      values="1; 1"
                       dur="0.5s"
                       begin="indefinite"
                       fill="freeze"
@@ -567,14 +567,14 @@
                 </svg>
               </div>
               <p class="prizes__desc">
-                <b>3</b>
+                <b data-start-value="3" data-final-value="3">3</b>
                 <span>загадочных путешествия</span>
               </p>
             </li>
-            <li class="prizes__item prizes__item--cases">
+            <li id="prize2" class="prizes__item prizes__item--cases">
               <div class="prizes__icon">
                 <img src="img/prize2-mob.svg" alt="">
-                <svg id="prize2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 350 330">
+                <svg id="prize2Icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 350 330">
                   <g id="prize2Clouds" opacity="0">
                     <g>
                       <line x1="65.43" y1="77.72" x2="105.21" y2="77.72" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
@@ -595,7 +595,7 @@
                         values="0; 1; 1; 0"
                         keyTimes="0; 0.5; 0.8; 1"
                         dur="1.5s"
-                        begin="prize2Animation.begin"
+                        begin="prize2SmilAnimation.begin"
                         fill="freeze"
                         />
                     <animateTransform
@@ -605,7 +605,7 @@
                         from="80, 0"
                         to="0, 0"
                         dur="0.5s"
-                        begin="prize2Animation.begin"
+                        begin="prize2SmilAnimation.begin"
                         />
                     <animateTransform
                         id="prize2CloudsSlideOutUp"
@@ -629,7 +629,7 @@
                               -6 269 247"
                           keyTimes="0; 0.4; 1"
                           dur="1.2s"
-                          begin="prize2Animation.begin"
+                          begin="prize2SmilAnimation.begin"
                           repeatCount="indefinite"
                           />
                     </path>
@@ -755,33 +755,33 @@
                             0 245 327
                         "
                         dur="1.7s"
-                        begin="prize2Animation.begin - 1.2s"
+                        begin="prize2SmilAnimation.begin - 1.2s"
                         repeatCount="indefinite"
                         />
                   </g>
                   <g id="prize2Floor">
-                    <line x1="147.13" y1="328.88" x2="283.79" y2="328.88" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
+                    <line x1="0" y1="328.88" x2="0" y2="328.88" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
                       <animate
                           attributeName="x1"
                           values="0; 0; 147.13"
                           keyTimes="0; 0.5; 1"
                           dur="0.8s"
-                          begin="prize2Animation.begin"
+                          begin="prize2SmilAnimation.begin"
                           fill="freeze"
                           />
                       <animate
                           attributeName="x2"
                           values="0; 283.79"
                           dur="0.4s"
-                          begin="prize2Animation.begin"
+                          begin="prize2SmilAnimation.begin"
                           fill="freeze"
                           />
                     </line>
                   </g>
                   <animate
-                      id="prize2Animation"
+                      id="prize2SmilAnimation"
                       attributeName="opacity"
-                      values="0; 1"
+                      values="1; 1"
                       dur="0.5s"
                       begin="indefinite"
                       fill="freeze"
@@ -789,14 +789,14 @@
                 </svg>
               </div>
               <p class="prizes__desc">
-                <b>7</b>
+                <b data-start-value="1" data-final-value="7">7</b>
                 <span>надежных чемоданов</span>
               </p>
             </li>
-            <li class="prizes__item prizes__item--codes">
+            <li id="prize3" class="prizes__item prizes__item--codes">
               <div class="prizes__icon">
                 <img src="img/prize3-mob.svg" alt="">
-                <svg id="prize3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="350" height="330" viewBox="0 0 350 330">
+                <svg id="prize3Icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="350" height="330" viewBox="0 0 350 330">
                   <g id="prize3SuitcaseTopClose" opacity="1">
                     <path d="M225.88,258.06H82.68a11.62,11.62,0,0,0-11.57,11.61v19.75H237.44V269.66a11.62,11.62,0,0,0-11.56-11.61" fill="#a67ee5"/>
                     <path d="M225.88,258.06H82.68a11.62,11.62,0,0,0-11.57,11.61v19.75H237.44V269.66A11.62,11.62,0,0,0,225.88,258.06Z" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
@@ -810,7 +810,7 @@
                         attributeName="opacity"
                         values="1; 0"
                         dur="0.1s"
-                        begin="prize3Animation.begin + 0.5s"
+                        begin="prize3SmilAnimation.begin + 0.5s"
                         fill="freeze"
                         />
                   </g>
@@ -825,7 +825,7 @@
                         attributeName="opacity"
                         values="0; 1"
                         dur="0.1s"
-                        begin="prize3Animation.begin + 0.5s"
+                        begin="prize3SmilAnimation.begin + 0.5s"
                         fill="freeze"
                         />
                   </g>
@@ -1184,7 +1184,7 @@
                       <line x1="46.24" y1="329" x2="303.76" y2="329" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
                   </g>
                   <animate
-                      id="prize3Animation"
+                      id="prize3SmilAnimation"
                       attributeName="opacity"
                       values="1; 1"
                       dur="0.5s"
@@ -1194,7 +1194,7 @@
                 </svg>
               </div>
               <p class="prizes__desc">
-                <b>900</b>
+                <b data-start-value="11" data-final-value="900">900</b>
                 <span>
                   промокодов на&nbsp;скидку 15%
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
