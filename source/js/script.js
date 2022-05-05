@@ -11,6 +11,7 @@ import FullPageScroll from './modules/full-page-scroll';
 import page from './modules/page';
 import initAccentTypography from './modules/init-accent-typography';
 import initGameTimer from './modules/init-game-timer';
+import prizes from './modules/prizes';
 
 // init modules
 page();
@@ -18,6 +19,7 @@ mobileHeight();
 slider();
 menu();
 footer();
+prizes();
 chat();
 result();
 form();

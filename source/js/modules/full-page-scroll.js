@@ -1,5 +1,4 @@
 import throttle from 'lodash/throttle';
-import SmilAnimation from './smil-animation';
 
 export default class FullPageScroll {
   constructor() {
@@ -62,8 +61,7 @@ export default class FullPageScroll {
       this.transitionScreen.classList.add('show');
       setTimeout(() => {
         this.activateSelectedScreen();
-        this.transitionScreen.classList.remove('show');
-      }, 700);
+      }, 500);
     } else {
       this.activateSelectedScreen();
     }
@@ -75,41 +73,13 @@ export default class FullPageScroll {
       screen.classList.remove(`active`);
     });
 
-    this.prepareSmilAnimation();
     this.prepareFootnote();
 
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     setTimeout(() => {
+      this.transitionScreen.classList.remove('show');
       this.screenElements[this.activeScreen].classList.add(`active`);
     }, 100);
-  }
-
-  prepareSmilAnimation() {
-    if (this.screenElements[this.activeScreen].id === 'prizes') {
-
-      const prizes = this.screenElements[this.activeScreen].querySelectorAll(`#prize1, #prize2, #prize3`);
-
-      prizes.forEach((prize) => {
-        const prizeSmilAnimation = SmilAnimation.create({
-          rootNode: prize,
-          animationStartSelector: `#${prize.id}Animation`,
-        });
-
-        switch(prize.id) {
-          case `prize1`:
-            prizeSmilAnimation.start(0);
-            break;
-
-          case `prize2`:
-            prizeSmilAnimation.start(2.5);
-            break;
-
-          case `prize3`:
-            prizeSmilAnimation.start(5);
-            break;
-        }
-      });
-    }
   }
 
   prepareFootnote() {
@@ -157,7 +127,7 @@ export default class FullPageScroll {
       detail: {
         'screenId': this.activeScreen,
         'screenName': this.screenElements[this.activeScreen].id,
-        'screenElement': this.screenElements[this.activeScreen]
+        'screenElement': this.screenElements[this.activeScreen],
       }
     });
 
