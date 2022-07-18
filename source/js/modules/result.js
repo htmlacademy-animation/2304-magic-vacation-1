@@ -1,8 +1,14 @@
+import SeaCalfScene2d from './canvas/sea-calf-scene-2d';
 import SmilAnimation from './smil-animation';
 
 export default () => {
   let showResultEls = document.querySelectorAll(`.js-show-result`);
   let results = document.querySelectorAll(`.screen--result`);
+
+  const seaCalfScene = SeaCalfScene2d.create({
+    canvas: document.querySelector(`#sea-calf-scene`),
+  });
+
   if (results.length) {
     for (let i = 0; i < showResultEls.length; i++) {
       showResultEls[i].addEventListener(`click`, function () {
@@ -23,6 +29,9 @@ export default () => {
               rootNode: targetEl[0].querySelector('#resultTitle1'),
               animationStartSelector: '#resultTitle1Animation',
             }).start();
+
+            seaCalfScene.start();
+
             break;
 
           case `result2`:
@@ -43,6 +52,7 @@ export default () => {
     }
 
     let playBtn = document.querySelector(`.js-play`);
+
     if (playBtn) {
       playBtn.addEventListener(`click`, function () {
         [].slice.call(results).forEach(function (el) {
@@ -53,5 +63,16 @@ export default () => {
         document.getElementById(`message-field`).focus();
       });
     }
+
+    document.body.addEventListener('screenChanged', (event) => {
+      results.forEach(
+        (el) => {
+          if ( el.classList.contains('screen--show') ) {
+            el.classList.remove(`screen--show`);
+            el.classList.add(`screen--hidden`);
+          }
+        }
+      );
+    });
   }
 };
