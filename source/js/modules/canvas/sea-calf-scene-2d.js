@@ -11,27 +11,27 @@ export default class SeaCalfScene2d extends Scene2d {
     const imageList = [
       {
         id: 'airplane',
-        url: '../img/module-4/win-primary-images/airplane.png',
+        url: 'https://raw.githubusercontent.com/roman-stepanov/2304-magic-vacation-1/master/source/img/module-4/win-primary-images/airplane.png',
       },
       {
         id: 'bigTree',
-        url: '../img/module-4/win-primary-images/tree%202.png',
+        url: 'https://raw.githubusercontent.com/roman-stepanov/2304-magic-vacation-1/master/source/img/module-4/win-primary-images/tree%202.png',
       },
       {
         id: 'smallTree',
-        url: '../img/module-4/win-primary-images/tree.png',
+        url: 'https://raw.githubusercontent.com/roman-stepanov/2304-magic-vacation-1/master/source/img/module-4/win-primary-images/tree.png',
       },
       {
         id: 'ice',
-        url: '../img/module-4/win-primary-images/ice.png',
+        url: 'https://raw.githubusercontent.com/roman-stepanov/2304-magic-vacation-1/master/source/img/module-4/win-primary-images/ice.png',
       },
       {
         id: 'seaCalf',
-        url: '../img/module-4/win-primary-images/sea-calf-2.png',
+        url: 'https://raw.githubusercontent.com/roman-stepanov/2304-magic-vacation-1/master/source/img/module-4/win-primary-images/sea-calf-2.png',
       },
       {
         id: 'snowflake',
-        url: '../img/module-4/win-primary-images/snowflake.png',
+        url: 'https://raw.githubusercontent.com/roman-stepanov/2304-magic-vacation-1/master/source/img/module-4/win-primary-images/snowflake.png',
       },
     ];
 
