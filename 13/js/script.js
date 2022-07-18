@@ -10873,27 +10873,27 @@ class SeaCalfScene2d extends _scene_2d_js__WEBPACK_IMPORTED_MODULE_0__["default"
     const imageList = [
       {
         id: 'airplane',
-        url: '/img/module-4/win-primary-images/airplane.png',
+        url: '../img/module-4/win-primary-images/airplane.png',
       },
       {
         id: 'bigTree',
-        url: '/img/module-4/win-primary-images/tree%202.png',
+        url: '../img/module-4/win-primary-images/tree%202.png',
       },
       {
         id: 'smallTree',
-        url: '/img/module-4/win-primary-images/tree.png',
+        url: '../img/module-4/win-primary-images/tree.png',
       },
       {
         id: 'ice',
-        url: '/img/module-4/win-primary-images/ice.png',
+        url: '../img/module-4/win-primary-images/ice.png',
       },
       {
         id: 'seaCalf',
-        url: '/img/module-4/win-primary-images/sea-calf-2.png',
+        url: '../img/module-4/win-primary-images/sea-calf-2.png',
       },
       {
         id: 'snowflake',
-        url: '/img/module-4/win-primary-images/snowflake.png',
+        url: '../img/module-4/win-primary-images/snowflake.png',
       },
     ];
 
