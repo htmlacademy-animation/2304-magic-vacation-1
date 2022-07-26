@@ -318,7 +318,7 @@
     animation-timing-function: ease-in;
     animation-direction: normal;
     animation-fill-mode: backwards;
-    animation-delay: 0.6s;
+    animation-delay: 1.5s;
   }
 
   .result__button-icon {
@@ -333,7 +333,7 @@
     animation-timing-function: ease-in, ease-out;
     animation-direction: normal;
     animation-fill-mode: backwards;
-    animation-delay: 0.6s;
+    animation-delay: 1.5s;
 
     @media (min-width: $stop-scaling) {
       margin-left: 15px;

@@ -1,5 +1,6 @@
-import SeaCalfScene2d from './canvas/sea-calf-scene-2d';
-import SmilAnimation from './smil-animation';
+import SeaCalfScene2d from './canvas/sea-calf-scene-2d.js';
+import CrocodileScene2d from './canvas/crocodile-scene-2d.js';
+import SmilAnimation from './smil-animation.js';
 
 export default () => {
   let showResultEls = document.querySelectorAll(`.js-show-result`);
@@ -7,6 +8,10 @@ export default () => {
 
   const seaCalfScene = SeaCalfScene2d.create({
     canvas: document.querySelector(`#sea-calf-scene`),
+  });
+
+  const crocodileScene = CrocodileScene2d.create({
+    canvas: document.querySelector(`#crocodile-scene`),
   });
 
   if (results.length) {
@@ -46,6 +51,9 @@ export default () => {
               rootNode: targetEl[0].querySelector('#resultTitle3'),
               animationStartSelector: '#resultTitle3Animation',
             }).start();
+
+            crocodileScene.start();
+
             break;
         }
       });
