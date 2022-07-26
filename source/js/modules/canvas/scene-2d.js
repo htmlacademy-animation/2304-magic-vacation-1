@@ -262,36 +262,27 @@ export default class Scene2d {
     let x = this.canvas.width * (params.x / 100) - width / 2;
     let y = this.canvas.height * (params.y / 100) - height / 2;
 
-    const isContextTransforming = params.opacity
-      || (params.transforms
-        && (
-          params.transforms.translateX
-          || params.transforms.translateY
-          || params.transforms.rotate
-          || params.transforms.scaleX
-          || params.transforms.scaleY
-          )
-        );
+    const isContextTransforming = (params.opacity || params.transforms);
 
     if (isContextTransforming) {
       this.ctx.save();
     }
 
     if (params.transforms) {
-      if (params.transforms.translateX) {
+      if ('translateX' in params.transforms) {
         x += this.canvas.width * (params.transforms.translateX / 100);
       }
 
-      if (params.transforms.translateY) {
+      if ('translateY' in params.transforms) {
         y += this.canvas.height * (params.transforms.translateY / 100);
       }
 
-      if (params.transforms.rotate) {
+      if ('rotate' in params.transforms) {
         this.ctx.translate(x + width / 2, y + height / 2);
         this.ctx.rotate((params.transforms.rotate * Math.PI) / 180);
       }
 
-      if (params.transforms.scaleX) {
+      if ('scaleX' in params.transforms) {
         width *= params.transforms.scaleX;
 
         if (params.transforms.scaleX < 0) {
@@ -301,7 +292,7 @@ export default class Scene2d {
         }
       }
 
-      if (params.transforms.scaleY) {
+      if ('scaleY' in params.transforms) {
         height *= params.transforms.scaleY;
 
         if (params.transforms.scaleY < 0) {
@@ -311,7 +302,7 @@ export default class Scene2d {
         }
       }
 
-      if (params.transforms.rotate) {
+      if ('rotate' in params.transforms) {
         this.ctx.translate(-x - width / 2, -y - height / 2);
       }
     }

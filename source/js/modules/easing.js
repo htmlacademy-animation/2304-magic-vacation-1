@@ -7,6 +7,10 @@ export default class Easing {
     return x * x;
   }
 
+  static easeInOutSine(x) {
+    return -(Math.cos(Math.PI * x) - 1) / 2;
+  }
+
   static easeOutElastic(x) {
     const c4 = (2 * Math.PI) / 3;
 
